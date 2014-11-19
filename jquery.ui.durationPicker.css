@@ -1,0 +1,7 @@
+.durationPickerTable {
+  align: left;
+}
+
+.durationPickerTable td:nth-child(2) {
+  padding-left: 2px;
+}

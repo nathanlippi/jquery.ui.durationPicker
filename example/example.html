@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>jQuery UI Duration Picker Example</title>
+    </head>
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../jquery.ui.durationPicker.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="../jquery.ui.durationPicker.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $("#durationPicker").durationPicker()
+            .change(function() {
+              var seconds = $("#durationPicker").durationPicker("seconds");
+              $("#seconds").val(seconds);
+            });
+
+          $("#setSeconds").click(function() {
+            var seconds = $("#seconds").val();
+            $("#durationPicker").durationPicker("seconds", seconds);
+          });
+        });
+    </script>
+
+    <body>
+        <h1>Duration Picker Example</h1>
+        <div id="durationPicker"></div>
+
+        <br/><br/>
+        <label for="seconds">Seconds</label>
+        <input type="numeric" id="seconds" value=100 />
+        <button id="setSeconds">Set Seconds</button>
+    </body>
+</html>
