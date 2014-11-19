@@ -8,13 +8,13 @@ If there is an interest or a need I'll modify this widget to have more types of 
 
 # Getting Started
 
-1. Include jQuery and jQuery UI in a HTML page, and add a div.
+Include jQuery and jQuery UI in a HTML page, and add a div:
 ```html
 <body>
     <div id="durationPicker"></div>
 </body>
 ```
-2. Initialize the durationPicker.
+Initialize the durationPicker:
 ```javascript
 $("#durationPicker").durationPicker()
 ```
