@@ -75,7 +75,7 @@ $.widget( "custom.durationPicker", {
         var sel = "table."+cssTableClass;
         $(tableRow).appendTo($(sel, self.element));
 
-        $(sel+" tr>td>input:last")
+        $(sel+" tr>td>input:last", self.element)
           .spinner({min: 0, max: subUnit.qtyInNextBiggestUnit-1})
           .on("spin", function(event, ui) {
             self.setUnitQty(subUnit.unit, ui.value);
@@ -91,7 +91,6 @@ $.widget( "custom.durationPicker", {
     this.options.seconds = seconds;
   },
   _setSeconds: function(value) {
-    var self = this;
     this.options.seconds = this._constrain(value);
     this._refresh();
   },
