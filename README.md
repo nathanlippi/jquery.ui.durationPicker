@@ -2,9 +2,9 @@
 
 ![Screenshot](image/screenshot.png?raw=true)
 
-This widget aims to provide an interface from which users can easily set a time duration, and the value in seconds can easily be retrieved.
+This widget aims to provide an interface from which users can easily set a duration in time.  It allows a single value in seconds to be retrieved.
 
-If there is an interest or a need I'll modify this widget to have smaller/larger units, and make units optional.
+If there is an interest or a need I'll modify this widget to have more types of units and some more configuration options.
 
 
 # Getting Started
