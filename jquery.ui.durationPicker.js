@@ -32,16 +32,17 @@ $.widget( "custom.durationPicker", {
     this._initUI();
     this._setSeconds(this.options.seconds);
   },
-  _subUnits: [
-      {unit: "seconds", qtyInNextBiggestUnit: 60},
-      {unit: "minutes", qtyInNextBiggestUnit: 60},
-      {unit: "hours", qtyInNextBiggestUnit: 24},
-      {unit: "days", qtyInNextBiggestUnit: 30},
-      {unit: "months", qtyInNextBiggestUnit: 12},
-      {unit: "years"}
-    ],
   _initSubUnits: function() {
     var self = this;
+
+    this._subUnits = [
+        {unit: "seconds", qtyInNextBiggestUnit: 60},
+        {unit: "minutes", qtyInNextBiggestUnit: 60},
+        {unit: "hours", qtyInNextBiggestUnit: 24},
+        {unit: "days", qtyInNextBiggestUnit: 30},
+        {unit: "months", qtyInNextBiggestUnit: 12},
+        {unit: "years"}
+      ];
 
     // Set number of seconds that correspond with each unit.
     //
