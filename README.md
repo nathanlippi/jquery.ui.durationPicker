@@ -31,9 +31,9 @@ $("#durationPicker").durationPicker("seconds", 123);
 ```
 Get values by unit:
 ```javascript
-$("#durationPicker").durationPicker("getUnitQty", "hour");
+$("#durationPicker").durationPicker("getUnitQty", "hours");
 ```
 Set values by unit:
 ```javascript
-$("#durationPicker").durationPicker("setUnitQty", "hour", 2);
+$("#durationPicker").durationPicker("setUnitQty", "hours", 2);
 ```
