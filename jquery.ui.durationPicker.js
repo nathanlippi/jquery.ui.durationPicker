@@ -62,9 +62,14 @@
     },
     _initUI: function() {
       var self = this;
-      var cssTableClass = "durationPickerTable";
 
-      $("<table class='" + cssTableClass + "'></table>")
+      var groupClass = "durationPickerGroup";
+      var unitClass = "durationPickerUnit";
+      var unitClassWrapper = "durationPickerUnitWrapper";
+      var unitControlClass = "durationPickerUnitControl";
+      var unitLabelClass = "durationPickerUnitLabel";
+
+      $("<ul class='" + groupClass + "'></ul>")
         .appendTo(self.element);
 
       $.each(this._getSubUnits().reverse(),
@@ -74,15 +79,22 @@
             max = subUnit.qtyInNextBiggestUnit-1;
           }
 
-          var tableRow = "<tr><td>" +
-            "<input type='number' class='" + subUnit.unit + "' " +
-            "value=0 step=1 min=0 max=" + max + " />" +
-            "</td><td>&nbsp;"+subUnit.unit+"</td></tr>";
+          var unitRow =
+            "<li>" +
+            "<div class='"+unitClassWrapper+"'>" +
+            "<div class='"+unitClass+"'>" +
+              "<div class='"+unitControlClass+"'>" +
+                "<input type='number' class='" + subUnit.unit + "' " +
+                "value=0 step=1 min=0 max=" + max + " />" +
+              "</div>" +
 
-          var sel = "table."+cssTableClass;
-          $(tableRow).appendTo($(sel, self.element));
+              "<div class='"+unitLabelClass+"'>" + subUnit.unit + "</div>" +
+            "</div></div></li>";
 
-          $(sel+" tr>td>input:last", self.element)
+          var sel = "ul." + groupClass;
+          $(unitRow).appendTo($(sel, self.element));
+
+          $(sel+" input:last", self.element)
             .on("keyup change", function() {
               var value = $(this).val();
               self.setUnitQty(subUnit.unit, value);
