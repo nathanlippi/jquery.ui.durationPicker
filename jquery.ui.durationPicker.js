@@ -64,10 +64,9 @@
       var self = this;
 
       var groupClass = "durationPickerGroup";
-      var unitClass = "durationPickerUnit";
-      var unitClassWrapper = "durationPickerUnitWrapper";
-      var unitControlClass = "durationPickerUnitControl";
-      var unitLabelClass = "durationPickerUnitLabel";
+      var unitClass = "unit";
+      var unitControlClass = "subunit subunit-control";
+      var unitLabelClass = "subunit subunit-label";
 
       $("<ul class='" + groupClass + "'></ul>")
         .appendTo(self.element);
@@ -81,15 +80,13 @@
 
           var unitRow =
             "<li>" +
-            "<div class='"+unitClassWrapper+"'>" +
             "<div class='"+unitClass+"'>" +
               "<div class='"+unitControlClass+"'>" +
                 "<input type='number' class='" + subUnit.unit + "' " +
                 "value=0 step=1 min=0 max=" + max + " />" +
               "</div>" +
-
               "<div class='"+unitLabelClass+"'>" + subUnit.unit + "</div>" +
-            "</div></div></li>";
+            "</div></li>";
 
           var sel = "ul." + groupClass;
           $(unitRow).appendTo($(sel, self.element));

@@ -6,26 +6,26 @@
   margin: 0px;
 }
 
-.durationPickerGroup
-.durationPickerUnitWrapper
+.durationPickerGroup .unit
 {
-  display: table-cell;
+  display: table-row;
 }
 
-.durationPickerGroup
-.durationPickerUnitWrapper .durationPickerUnit
-{
-  display: table;
-}
-
-.durationPickerGroup
-.durationPickerUnit .durationPickerUnitLabel {
+.durationPickerGroup .unit .subunit-label {
   padding-left: 5px;
   display: table-cell;
 }
 
-.durationPickerGroup
-.durationPickerUnit .durationPickerUnitControl input[type=number] {
+.durationPickerGroup .unit .subunit-control {
+  display: table-cell;
+}
+
+
+/*****************
+Other
+*****************/
+
+.durationPickerGroup .unit .subunit-control input[type=number] {
   width: 3em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
