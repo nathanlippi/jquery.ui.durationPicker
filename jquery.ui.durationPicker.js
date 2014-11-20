@@ -15,7 +15,7 @@
       var index = this._subUnitsIndexByUnit[unit];
       var qtyInNextBiggestUnit = this._subUnits[index].qtyInNextBiggestUnit;
       if(quantity < 0 || quantity >= qtyInNextBiggestUnit) {
-        throw new Error("Attempting to set out-of-range value.");
+        quantity = this._subUnits[index].quantity;
       }
       this._subUnits[index].quantity = quantity;
       this._reCalculateSeconds();
