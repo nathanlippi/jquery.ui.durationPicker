@@ -5,3 +5,10 @@
 .durationPickerTable td:nth-child(2) {
   padding-left: 2px;
 }
+
+input[type=number] {
+  width: 3em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}

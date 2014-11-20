@@ -69,17 +69,23 @@
 
       $.each(this._getSubUnits().reverse(),
         function(ii, subUnit) {
+          var max = 99;
+          if(subUnit.qtyInNextBiggestUnit) {
+            max = subUnit.qtyInNextBiggestUnit-1;
+          }
+
           var tableRow = "<tr><td>" +
-            "<input class='" + subUnit.unit + " spinner' value=0 size=3 />" +
+            "<input type='number' class='" + subUnit.unit + "' " +
+            "value=0 step=1 min=0 max=" + max + " />" +
             "</td><td>&nbsp;"+subUnit.unit+"</td></tr>";
 
           var sel = "table."+cssTableClass;
           $(tableRow).appendTo($(sel, self.element));
 
           $(sel+" tr>td>input:last", self.element)
-            .spinner({min: 0, max: subUnit.qtyInNextBiggestUnit-1})
-            .on("spin", function(event, ui) {
-              self.setUnitQty(subUnit.unit, ui.value);
+            .on("keyup change", function() {
+              var value = $(this).val();
+              self.setUnitQty(subUnit.unit, value);
               self.element.change();
             });
         });
