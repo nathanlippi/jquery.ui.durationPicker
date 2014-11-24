@@ -145,8 +145,9 @@
       return this._subUnits[index].secondsPerUnit;
     },
     _constrain: function( value ) {
-      if (value < 0) { value = 0; }
-      return parseInt(value, 10);
+      value = parseInt(value, 10);
+      if (isNaN(value) || value < 0) { value = 0; }
+      return value;
     },
     _destroy: function() {
       this.element
